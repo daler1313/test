@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сумма двух чисел</title>
+    
+</head>
+<body>
+    <h2>Введите два числа для сложения:</h2>
+
+    <input type="number" id="num1" placeholder="Первое число">
+    <input type="number" id="num2" placeholder="Второе число">
+    
+
+    <button onclick="calculateSum()">Посчитать сумму</button>
+
+    <div id="result"></div>
+
+    <script>
+      
+        function calculateSum() {
+    
+            let number1 = parseFloat(document.getElementById("num1").value);
+            let number2 = parseFloat(document.getElementById("num2").value);
+
+       
+      
+                let sum = number1 + number2;
+           
+                document.getElementById("result").innerHTML = "Сумма: " + sum;
+            
+        }
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+    }
+}
+xmlhttp.open("GET","get_sth.txt", true);
+xmlhttp.read();
+        
+    </script>
+</body>
+</html>
